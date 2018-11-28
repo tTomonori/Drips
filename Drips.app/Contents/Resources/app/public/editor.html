@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<style media="screen">
+body{
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+	margin: 0;
+}
+#dragHeader{
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 20px;
+	-webkit-app-region: drag;
+}
+	#editor{
+		display: inline-block;
+		background: #0ff;
+		border-radius: 20px;
+		padding: 20px;
+		pointer-events: auto;
+	}
+	input[type=number]{
+		width: 6ch;
+	}
+	tr>td:nth-child(1){
+		text-align: center;
+	}
+</style>
+<body>
+	<div id="editor">
+		<div id="dragHeader"></div>
+		<form class="" onsubmit="setProperty();return false;">
+			<table id="formTable">
+				<tr><td>BirthRate</td><td>:</td><td><input type="number" step="0.01" min="0.01">~<input type="number" step="0.01" min="0.01"></td></tr>
+				<tr><td>Size</td><td>:</td><td><input type="number" step="1" min="1">~<input type="number" step="1" min="1"></td></tr>
+				<tr><td>RotateSpeed</td><td>:</td><td><input type="number" step="0.01" min="0">~<input type="number" step="1" min="0"></td></tr>
+				<tr><td>FallSpeed</td><td>:</td><td><input type="number" step="0.01" min="0.01">~<input type="number" step="0.01" min="0.01"></td></tr>
+				<tr><td>Opacity</td><td>:</td><td><input type="number" step="0.01" min="0">~<input type="number" step="0.01" min="0"></td></tr>
+				<tr><td>HorizontalSpeed</td><td>:</td><td><input type="number" step="0.01" min="0">~<input type="number" step="0.01" min="0"></td></tr>
+				<!-- <tr><td></td><td>:</td><td><input type="number">~<input type="number"></td></tr> -->
+			</table>
+			<input type="radio" name="color" value="white">white
+			&nbsp&nbsp&nbsp
+			<input type="radio" name="color" value="blue">blue
+			&nbsp&nbsp&nbsp
+			<input type="radio" name="color" value="mix">mix
+			<br>
+			<br>
+			<input type="submit" name="" value="OK">
+			<button type="button" name="button" onclick="editEnd();">Cancel</button>
+		</form>
+	</div>
+</body>
+<script>
+	const renderer=require('electron').ipcRenderer
+	const nedb=require(__dirname+'/../node_modules/nedb')
+</script>
+<script type="text/javascript" src="./editor.js"></script>
+</html>

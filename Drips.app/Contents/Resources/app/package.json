@@ -1,0 +1,24 @@
+{
+  "name": "Drips",
+  "version": "1.0.0",
+  "description": "デスクトップに雪を降らす",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager ./ Drips --platform=darwin --icon=icon/icon.icns"
+  },
+  "repository": "",
+  "keywords": [
+    "Electron",
+    "Drip"
+  ],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  },
+  "dependencies": {
+    "electron": "^2.0.7",
+    "nedb": "^1.8.0"
+  }
+}
